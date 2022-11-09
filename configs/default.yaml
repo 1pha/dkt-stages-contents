@@ -1,0 +1,30 @@
+defaults:
+  - model: lstm
+
+data:
+  asset_dir: asset/
+  data_dir: /opt/ml/input/data
+  file_name: train_data.csv
+
+  n_questions: 1
+  n_test: 1
+  n_tag: 1
+
+seed: 42
+device: cpu
+
+model_dir: models/
+model_name: model.pt
+output_dir: output/
+test_file_name: test_data.csv
+log_steps: 50
+
+max_seq_len: 20
+num_workers: 1
+n_epochs: 20
+batch_size: 64
+lr: 1e-4
+clip_grad: 10
+patience: 5
+optimizer: adam
+scheduler: plateau

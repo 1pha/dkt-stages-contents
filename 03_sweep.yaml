@@ -1,0 +1,15 @@
+program: code/dkt/train.py # 작업할 파이썬 스크립트 이름
+project: dkt
+method: bayes # 매개변수를 찾는 방식
+metric: # 어떤 메트릭을 기준으로 좋은 실험을 찾을지
+  name: val_loss
+  goal: minimize
+parameters: # 변경하고 싶은 parameters
+  lr:
+    # 범주형의 경우 실험하고 싶은 값들을 리스트로 넣어줍니다.
+    # 연속형이더라도 실험하고 싶은 값들이 정해져있다면 리스트로 넣어줍니다.
+    values: [1e-2, 1e-3, 1e-4]
+  drop_out:
+    # 연속형의 경우 최대/최소값을 기입해주면 그 범위 안에서 값을 적절히 선택하여 실험을 진행합니다.
+    min: 0.0
+    max: 0.5

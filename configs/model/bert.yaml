@@ -1,0 +1,10 @@
+_target_: code.dkt.dkt.model.BERT
+args:
+  hidden_dim: 64
+  n_layers: 2
+  n_heads: 2
+  drop_out: 0.2
+
+  n_questions: ${data.n_questions}
+  n_test: ${data.n_test}
+  n_tag: ${data.n_tag}
